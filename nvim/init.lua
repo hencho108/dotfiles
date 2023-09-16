@@ -37,12 +37,13 @@ require('lazy').setup({
   require 'plugins.comment',
   require 'plugins.telescope',
   require 'plugins.nvim-treesitter',
-  -- require 'plugins.debug',
+  require 'plugins.debug',
   require 'plugins.nvim-tree',
   -- require 'plugins.neo-tree',
   require 'plugins.nvim-autopairs',
   require 'plugins.hop',
   require 'plugins.bufferline',
+  require 'plugins.vim-dadbod',
 }, {})
 
 -- The line beneath this is called `modeline`. See `:help modeline`

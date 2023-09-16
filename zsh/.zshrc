@@ -1,3 +1,5 @@
+export DISABLE_AUTO_TITLE="true"
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -7,18 +9,19 @@ export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 # export PIPENV_VENV_IN_PROJECT=1
 
-# Poetry
-export PATH="/Users/hendrik/.local/bin:$PATH"
-
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(pyenv init -)" # Initialize pyenv when a new shell spawns
+
+# Poetry
+export PATH="$HOME/.local/bin:$PATH"
+# alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 
 # zettl
 export Z_EDITOR='nvim'
-export NOTES_DIR="$HOME/Dropbox/zettl"
 export NOTE_NAME_AS_TITLE=1
+export NOTES_DIR="$HOME/Dropbox/zettl"
 
 # Add /usr/local/bin to the beginning of the PATH environment variable.
 # This ensures that executables in /usr/local/bin are found before other directories in the PATH.
@@ -120,10 +123,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git # gst, ga, gc
+    git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    # web-search
+    web-search
     vi-mode
 )
 
@@ -158,6 +161,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
 # Change cursor shape for vi-mode
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]]; then
@@ -173,10 +177,3 @@ zle-line-init() {
 }
 zle -N zle-line-init
 echo -ne '\e[5 q'
-
-# ColorLS
-alias ls='colorls'
-alias lc='colorls -lA --sd'
-source $(dirname $(gem which colorls))/tab_complete.sh
-
-
