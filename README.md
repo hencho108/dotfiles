@@ -13,50 +13,13 @@ Install essential software.
 Add Homebrew to PATH.
 
 ```bash
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/<username>/.zshrc
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zshrc
 ```
 
-### [Brave Browser](https://formulae.brew.sh/cask/brave-browser) - Decent web browser
+Install apps from `Brewfile`.
 
 ```bash
-brew install --cask brave-browser
-```
-
-### [iTerm2](https://formulae.brew.sh/cask/iterm2) - Terminal emulator app
-
-```bash
-brew install --cask iterm2
-```
-
-### [Rectangle](https://formulae.brew.sh/cask/rectangle) - Move and resize windows using keyboard shortcuts
-
-```bash
-brew install --cask rectangle
-```
-
-### [Neovim](https://formulae.brew.sh/formula/neovim) - Vim text editor
-
-```bash
-brew install neovim
-```
-
-### [Node](https://formulae.brew.sh/formula/node) - node.js/npm
-
-```bash
-brew install node
-```
-
-### [ripgrep](https://formulae.brew.sh/formula/ripgrep) - Search tool like grep. Enables live grep for the Telescope Neovim plugin.
-
-```bash
-brew install ripgrep
-```
-
-### Hack Nerd Font
-
-```bash
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
+brew bundle install
 ```
 
 ### Oh My Zsh
@@ -83,7 +46,7 @@ Configure PowerLevel10K.
 p10k configure
 ```
 
-### Plugins for Oh My Zsh
+### Plugins for Oh My Zsh (should already be installed via Brewfile)
 
 Autosuggestions
 
@@ -109,17 +72,15 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 sudo gem install colorls
 ```
 
-### [tmux](https://formulae.brew.sh/formula/tmux) - Terminal multiplexer
-
-```bash
-brew install tmux
-```
+### Tmux plugins
 
 Plugin manager for tmux
 
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+### Other
 
 Enable key repeats globally. This will enable pressing and holding 'hjkl' in JupterLab's vim mode, for instance.
 

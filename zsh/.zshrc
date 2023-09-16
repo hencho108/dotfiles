@@ -1,5 +1,5 @@
 # Homebrew
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Pipenv
 export LANG="en_US.UTF-8"
@@ -157,7 +157,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(/usr/local/bin/brew shellenv)"
 
 # Change cursor shape for vi-mode
 function zle-keymap-select {
