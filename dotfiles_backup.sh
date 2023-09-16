@@ -15,14 +15,14 @@ copy_to_backup() {
 	# Create the target directory if it doesn't exist
 	mkdir -p "${target_dir}"
 
-	# Copy the file/directory
-	cp -R "${HOME}/${src_file}" "${target_path}"
+	# Copy the file/directory, excluding .config/nvim/db_ui
+	rsync -av --exclude='db_ui' "${HOME}/${src_file}" "${target_path}"
 }
 
 # Call the copy_to_backup function for each dotfile/directory you want to back up,
 # specifying the source file and the target path within the backup directory
 copy_to_backup ".zshrc" "zsh/.zshrc"
-copy_to_backup ".config/nvim/*" "nvim/"
+copy_to_backup ".config/nvim" "nvim"
 copy_to_backup ".tmux.conf" "tmux/.tmux.conf"
 copy_to_backup ".iterm" "iterm"
 
