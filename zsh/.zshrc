@@ -126,7 +126,6 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    web-search
     vi-mode
 )
 
@@ -177,3 +176,8 @@ zle-line-init() {
 }
 zle -N zle-line-init
 echo -ne '\e[5 q'
+
+# ColorLS
+alias ls='colorls'
+alias lc='colorls -lA --sd'
+source $(dirname $(gem which colorls))/tab_complete.sh
