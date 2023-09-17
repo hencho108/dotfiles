@@ -22,7 +22,7 @@ copy_to_backup() {
 # Call the copy_to_backup function for each dotfile/directory you want to back up,
 # specifying the source file and the target path within the backup directory
 copy_to_backup ".zshrc" "zsh/.zshrc"
-copy_to_backup ".config/nvim" "nvim"
+copy_to_backup ".config/nvim/" "nvim"
 copy_to_backup ".tmux.conf" "tmux/.tmux.conf"
 copy_to_backup ".iterm" "iterm"
 
