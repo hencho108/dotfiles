@@ -43,7 +43,7 @@ require('lazy').setup({
   require 'plugins.nvim-autopairs',
   require 'plugins.hop',
   require 'plugins.bufferline',
-  require 'plugins.vim-dadbod',
+  -- require 'plugins.vim-dadbod',
 }, {})
 
 -- The line beneath this is called `modeline`. See `:help modeline`

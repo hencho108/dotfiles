@@ -26,5 +26,5 @@ cask "kitty" # GPU-based terminal emulator
 cask "obsidian" # Note-taking app
 cask "spotify" # Music
 cask "grammarly-desktop" # Utility to fix grammar errors and style issues in text
-
+cask "visual-studio-code" # Code editor
 
