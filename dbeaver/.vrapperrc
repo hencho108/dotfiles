@@ -1,0 +1,9 @@
+:set autoindent
+:set ignorecase
+:set smartcase
+:set autoindent
+:set clipboard=unnamedplus
+:imap jk <Esc>
+:imap kj <Esc>
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprev<CR>
