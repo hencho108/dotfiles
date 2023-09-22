@@ -1,0 +1,114 @@
+// Place your key bindings in this file to override the defaults
+[
+  // NAVIGATION
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  // FILE TREE
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+e"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "ctrl+e",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "workbench.action.newWindow",
+    "when": "!explorerViewletFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    // "command": "workbench.action.focusActiveEditorGroup",
+    "command": "workbench.action.navigateRight",
+    "when": "explorerViewletFocus"
+  },
+  // {
+  //   "key": "ctrl+h",
+  //   "command": "workbench.files.action.focusFilesExplorer",
+  //   "when": "activeEditorGroupIndex === 1"
+  // },
+  // EXTRA
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+shift+5",
+    "command": "editor.emmet.action.matchTag"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  // {
+  //   "key": "ctrl+/",
+  //   "command": "-github.copilot.acceptCursorPanelSolution",
+  //   "when": "github.copilot.activated && github.copilot.panelVisible"
+  // },
+  // {
+  //   "key": "ctrl+/",
+  //   "command": "-editor.action.accessibleViewAcceptInlineCompletion",
+  //   "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'"
+  // },
+  // {
+  //   "key": "ctrl+/",
+  //   "command": "-workbench.action.terminal.sendSequence",
+  //   "when": "terminalFocus"
+  // }
+  // toggle comment selection
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "-extension.vim_ctrl+s",
+    "when": "editorTextFocus && vim.active && vim.use<C-s> && !inDebugRepl"
+  }
+]
