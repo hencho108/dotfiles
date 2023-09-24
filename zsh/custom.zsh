@@ -43,6 +43,7 @@ export DEFAULT_USER="$(whoami)"
 # Vi mode
 bindkey -v
 export KEYTIMEOUT=1 # Makes switching modes quicker
+export VI_MODE_SET_CURSOR=true # Change cursor on mode change
 
 # ColorLS
 alias ls='colorls'
