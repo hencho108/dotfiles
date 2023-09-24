@@ -21,9 +21,9 @@ export Z_EDITOR='nvim'
 export NOTE_NAME_AS_TITLE=1
 export NOTES_DIR="$HOME/Dropbox/zettl"
 
-# Ranger
-export VISUAL=nvim
+# Use neovim as default editor
 export EDITOR=nvim
+export VISUAL=nvim
 
 # Add /usr/local/bin to the beginning of the PATH environment variable.
 # This ensures that executables in /usr/local/bin are found before other directories in the PATH.
@@ -41,7 +41,8 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 export DEFAULT_USER="$(whoami)"
 
 # Vi mode
-export VI_MODE_SET_CURSOR=true
+bindkey -v
+export KEYTIMEOUT=1 # Makes switching modes quicker
 
 # ColorLS
 alias ls='colorls'

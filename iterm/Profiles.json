@@ -1,4 +1,6 @@
 {
+"Profiles": [
+{
   "Horizontal Spacing" : 1,
   "Tags" : [
 
@@ -296,7 +298,7 @@
     "Red Component" : 0.3333333432674408,
     "Blue Component" : 1
   },
-  "Name" : "main-profile",
+  "Name" : "main",
   "Cursor Text Color" : {
     "Green Component" : 1,
     "Red Component" : 1,
@@ -340,4 +342,6 @@
   "Normal Font" : "HackNF-Regular 13",
   "Custom Directory" : "No",
   "Guid" : "441FC0B9-1AC7-4CAA-9B34-15B47513B484"
+}
+]
 }
