@@ -122,5 +122,8 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 [ -f "$HOME/.config/zsh/aliases.zsh" ] && source "$HOME/.config/zsh/aliases.zsh"
 
+# Work
+[ -f "$HOME/.config/zsh/work.zsh" ] && source "$HOME/.config/zsh/work.zsh"
+
 # Secrets
 [ -f "$HOME/.env" ] && source "$HOME/.env"

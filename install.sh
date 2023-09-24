@@ -21,8 +21,8 @@ sudo gem install colorls
 read -p "Overwrite existing dotfiles? [y/n] " choice
 chmod +x symlinks.sh
 if [[ "$choice" == "y" ]]; then
-    echo "Deleting existing dotfiles..."
-    ./symlinks.sh --delete --include-files
+	echo "Deleting existing dotfiles..."
+	./symlinks.sh --delete --include-files
 fi
 echo "Creating symbolic links..."
 ./symlinks.sh --create
@@ -36,3 +36,7 @@ chmod +x ./vscode/install-extensions.sh
 
 echo "Adding .hushlogin file to suppress 'last login' message in terminal..."
 touch ~/.hushlogin
+
+echo "Applying system configuration..."
+chmod +x ./system/apply-system-config.sh
+./system/apply-system-config.sh

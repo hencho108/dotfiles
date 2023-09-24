@@ -2,7 +2,7 @@
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
 alias suspend='sudo pm-suspend'
-alias sleep='sudo pmset sleep'
+alias sleep='pmset sleepnow'
 
 # Git
 alias gs='git status'
