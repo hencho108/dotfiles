@@ -7,11 +7,12 @@ brew "node" # node.js / npm
 brew "pyenv" # Python version management
 brew "ripgrep" # Search tool like grep. Enables live grep for the Telescope Neovim plugin.
 brew "tmux" # Terminal multiplexer
-brew "fzf"
+brew "fzf" # Command-line fuzzy finder
 brew "zsh-autosuggestions" # Autosuggestions for zsh
 brew "zsh-syntax-highlighting" # Syntax-highlighting for zsh
 brew "awscli" # Official Amazon AWS command-line interface
 brew "tpm" # Plugin manager for tmux
+brew "ranger" # Command-line file browser
 cask "appcleaner" # Application uninstaller
 cask "brave-browser" # Web browser focusing on privacy
 cask "font-hack-nerd-font" # Nice font

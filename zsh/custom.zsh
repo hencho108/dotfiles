@@ -21,6 +21,10 @@ export Z_EDITOR='nvim'
 export NOTE_NAME_AS_TITLE=1
 export NOTES_DIR="$HOME/Dropbox/zettl"
 
+# Ranger
+export VISUAL=nvim
+export EDITOR=nvim
+
 # Add /usr/local/bin to the beginning of the PATH environment variable.
 # This ensures that executables in /usr/local/bin are found before other directories in the PATH.
 export PATH="/usr/local/bin:$PATH"

@@ -2,6 +2,12 @@
 
 ## MacOS Setup
 
+Install Apple's Command Line Tools, which are prerequisites for Git and Homebrew.
+
+```bash
+xcode-select --install
+```
+
 Install essential software.
 
 ### [Homebrew](https://brew.sh/) - Package manager for MacOS
