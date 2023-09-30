@@ -1,71 +1,59 @@
 #!/bin/bash
 
 . scripts/utils.sh
-
-install_xcode() {
-	info "Installing Apple's CLI tools (prerequisites for Git and Homebrew)..."
-	if xcode-select -p >/dev/null; then
-		warning "xcode is already installed"
-	else
-		xcode-select --install
-		sudo xcodebuild -license accept
-	fi
-}
-
-install_homebrew() {
-	info "Installing Homebrew..."
-	export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-	if hash brew &>/dev/null; then
-		warning "Homebrew already installed"
-	else
-		sudo --validate
-		NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-	fi
-}
+. scripts/prerequisites.sh
+. scripts/osx-defaults.sh
+. scripts/mac-apps.sh
+. scripts/vscode-extensions.sh
+. scripts/oh-my-zsh.sh
+. scripts/tmux-tpm.sh
+. scripts/colorls.sh
+. scripts/symlinks.sh
 
 info "Dotfiles intallation initialized..."
+read -p "Overwrite existing dotfiles? [y/n] " overwrite_dotfiles
 
 info "================================================================================"
-info "Prerequisities"
+info "Prerequisites"
 info "================================================================================"
+
 install_xcode
 install_homebrew
-#
-# echo "Installing Homebrew..."
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-#
-# echo "Installing Oh My Zsh..."
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#
-# echo "Installing PowerLevel10k Theme for Oh My Zsh..."
-# git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-#
-# echo "Installing plugin manager for tmux..."
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-#
-# echo "Installing ColorLS..."
-# sudo gem install colorls
-#
-# # Prompt the user for input
-# read -p "Overwrite existing dotfiles? [y/n] " choice
-# chmod +x symlinks.sh
-# if [[ "$choice" == "y" ]]; then
-# 	echo "Deleting existing dotfiles..."
-# 	./symlinks.sh --delete --include-files
-# fi
-# echo "Creating symbolic links..."
-# ./symlinks.sh --create
-#
-# echo "Installing packages via Homebrew..."
-# brew bundle install
-#
-# echo "Installing VSCode extensions..."
-# chmod +x ./vscode/install-extensions.sh
-# ./vscode/install-extensions.sh
-#
-# echo "Adding .hushlogin file to suppress 'last login' message in terminal..."
-# touch ~/.hushlogin
-#
-# echo "Applying system configuration..."
-# chmod +x ./system/apply-system-config.sh
-# ./system/apply-system-config.sh
+
+info "================================================================================"
+info "OSX System Defaults"
+info "================================================================================"
+
+register_keyboard_shortcuts
+apply_osx_system_defaults
+
+info "================================================================================"
+info "Apps"
+info "================================================================================"
+
+install_brewfile_apps
+install_vscode_extensions
+
+info "================================================================================"
+info "Terminal"
+info "================================================================================"
+
+install_oh_my_zsh
+install_p10k
+install_tmux_tpm
+install_colorls
+info "Adding .hushlogin file to suppress 'last login' message in terminal..."
+touch ~/.hushlogin
+
+info "================================================================================"
+info "Symbolic Links"
+info "================================================================================"
+
+chmod +x ./scripts/symlinks.sh
+if [[ "$overwrite_dotfiles" == "y" ]]; then
+	warning "Deleting existing dotfiles..."
+	./scripts/symlinks.sh --delete --include-files
+fi
+./scripts/symlinks.sh --create
+
+success "Dotfiles set up successfully."

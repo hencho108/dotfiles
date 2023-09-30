@@ -13,8 +13,8 @@ register_keyboard_shortcuts() {
 EOF
 }
 
-apply_osx_settings() {
-	info "Applying OSX settings..."
+apply_osx_system_defaults() {
+	info "Applying OSX system defaults..."
 
 	# Enable key repeats
 	defaults write -g ApplePressAndHoldEnabled -bool false
@@ -67,4 +67,8 @@ apply_osx_settings() {
 	defaults write com.apple.dock "minimize-to-application" -bool true
 	defaults write com.apple.dock tilesize -float 32
 }
-register_keyboard_shortcuts
+
+if [ "$(basename "$0")" = "$(basename "${BASH_SOURCE[0]}")" ]; then
+	register_keyboard_shortcuts
+	apply_osx_system_defaults
+fi

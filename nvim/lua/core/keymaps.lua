@@ -41,7 +41,7 @@ vim.keymap.set('n', '<leader>-', '<C-x>', opts) -- decrement
 vim.keymap.set('n', '<leader>v', '<C-w>v', opts)          -- split window vertically
 vim.keymap.set('n', '<leader>h', '<C-w>s', opts)          -- split window horizontally
 vim.keymap.set('n', '<leader>se', '<C-w>=', opts)         -- make split windows equal width & height
-vim.keymap.set('n', '<leader>sx', ':close<CR>', opts)     -- close current split window
+vim.keymap.set('n', '<leader>xs', ':close<CR>', opts)     -- close current split window
 
 vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts)    -- open new tab
 vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', opts)  -- close current tab

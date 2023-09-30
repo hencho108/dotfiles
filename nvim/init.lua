@@ -24,7 +24,31 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup plugins
 require('lazy').setup({
-  require 'plugins.no-config-plugins',
+
+  ---------------------------------------------
+  -- Plugins that don't require configuration
+  ---------------------------------------------
+
+  -- git related plugins
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+
+  -- detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+
+  -- tmux & split window navigation
+  'christoomey/vim-tmux-navigator',
+
+  -- high-performance color highlighter
+  'norcalli/nvim-colorizer.lua',
+
+  -- autoclose tags
+  'windwp/nvim-ts-autotag',
+
+  ---------------------------------------------
+  -- Plugins that require configuration
+  ---------------------------------------------
+
   require 'plugins.lsp.nvim-lspconfig',
   require 'plugins.lsp.null-ls',
   require 'plugins.nvim-cmp',

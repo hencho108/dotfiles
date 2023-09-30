@@ -4,7 +4,9 @@ config_file="config/symlinks.conf"
 
 . scripts/utils.sh
 
-create_links() {
+create_symlinks() {
+	info "Creating symbolic links..."
+
 	# Read dotfile links from the config file
 	while IFS=: read -r source target || [ -n "$source" ]; do
 
@@ -45,7 +47,9 @@ create_links() {
 	done <"$config_file"
 }
 
-delete_links() {
+delete_symlinks() {
+	info "Deleting symbolic links..."
+
 	while IFS=: read -r _ target || [ -n "$target" ]; do
 
 		# Skip empty and invalid lines
@@ -68,24 +72,26 @@ delete_links() {
 }
 
 # Parse arguments
-case "$1" in
-"--create")
-	create_links
-	;;
-"--delete")
-	if [ "$2" == "--include-files" ]; then
-		include_files=true
-	fi
-	delete_links
-	;;
-"--help")
-	# Display usage/help message
-	echo "Usage: $0 [--create | --delete [--include-files] | --help]"
-	;;
-*)
-	# Display an error message for unknown arguments
-	error "Error: Unknown argument '$1'"
-	error "Usage: $0 [--create | --delete [--include-files] | --help]"
-	exit 1
-	;;
-esac
+if [ "$(basename "$0")" = "$(basename "${BASH_SOURCE[0]}")" ]; then
+	case "$1" in
+	"--create")
+		create_symlinks
+		;;
+	"--delete")
+		if [ "$2" == "--include-files" ]; then
+			include_files=true
+		fi
+		delete_symlinks
+		;;
+	"--help")
+		# Display usage/help message
+		echo "Usage: $0 [--create | --delete [--include-files] | --help]"
+		;;
+	*)
+		# Display an error message for unknown arguments
+		error "Error: Unknown argument '$1'"
+		error "Usage: $0 [--create | --delete [--include-files] | --help]"
+		exit 1
+		;;
+	esac
+fi
