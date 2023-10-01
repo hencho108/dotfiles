@@ -42,7 +42,7 @@ return {
 
         local sources = {
             formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
-            formatting.stylua,
+            formatting.stylua.with { args = { '--indent-width', '4' } },
             formatting.black,
             formatting.isort.with { extra_args = { '--profile', 'black', '--multi-line', '3' } },
             formatting.prettier,
