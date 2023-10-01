@@ -4,9 +4,7 @@
 . scripts/prerequisites.sh
 . scripts/osx-defaults.sh
 . scripts/mac-apps.sh
-. scripts/vscode-extensions.sh
 . scripts/oh-my-zsh.sh
-. scripts/tmux-tpm.sh
 . scripts/colorls.sh
 . scripts/symlinks.sh
 
@@ -32,7 +30,6 @@ info "Apps"
 info "================================================================================"
 
 install_brewfile_apps
-install_vscode_extensions
 
 info "================================================================================"
 info "Terminal"
@@ -40,7 +37,6 @@ info "==========================================================================
 
 install_oh_my_zsh
 install_p10k
-install_tmux_tpm
 install_colorls
 info "Adding .hushlogin file to suppress 'last login' message in terminal..."
 touch ~/.hushlogin
@@ -51,8 +47,8 @@ info "==========================================================================
 
 chmod +x ./scripts/symlinks.sh
 if [[ "$overwrite_dotfiles" == "y" ]]; then
-	warning "Deleting existing dotfiles..."
-	./scripts/symlinks.sh --delete --include-files
+    warning "Deleting existing dotfiles..."
+    ./scripts/symlinks.sh --delete --include-files
 fi
 ./scripts/symlinks.sh --create
 

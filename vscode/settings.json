@@ -41,7 +41,7 @@
   "editor.stickyScroll.enabled": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "editor.linkedEditing": true,
   "editor.inlineSuggest.enabled": true,
   "editor.formatOnSave": true,
