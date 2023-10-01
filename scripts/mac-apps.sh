@@ -11,7 +11,7 @@ install_brewfile_apps() {
 		return 1
 	fi
 
-	# Check if the Brewfile exists in the current directory
+	# Check if Brewfile exists in the current directory
 	if [ ! -f "$brewfile" ]; then
 		error "Brewfile not found in the current directory."
 		return 1
