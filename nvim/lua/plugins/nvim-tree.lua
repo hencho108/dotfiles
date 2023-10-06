@@ -143,7 +143,7 @@ return {
             },
             git = {
                 enable = true,
-                ignore = true, -- show files listed in .gitignore
+                ignore = false, -- show files listed in .gitignore
                 show_on_dirs = true,
                 show_on_open_dirs = true,
                 timeout = 400,

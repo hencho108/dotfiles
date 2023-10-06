@@ -46,6 +46,6 @@ export KEYTIMEOUT=1 # Makes switching modes quicker
 export VI_MODE_SET_CURSOR=true # Change cursor on mode change
 
 # ColorLS
-alias ls='colorls'
-alias lc='colorls -lA --sd'
-source $(dirname $(gem which colorls))/tab_complete.sh
+# alias ls='colorls'
+# alias lc='colorls -lA --sd'
+# source $(dirname $(gem which colorls))/tab_complete.sh

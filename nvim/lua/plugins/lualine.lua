@@ -3,7 +3,8 @@ return {
     'nvim-lualine/lualine.nvim',
     config = function()
         -- get lualine theme
-        local lualine_theme = require 'lualine.themes.onedark'
+        -- local lualine_theme = require 'lualine.themes.onedark'
+        -- local lualine_theme = 'nord'
 
         -- Adapted from: https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/themes/onedark.lua
         local colors = {

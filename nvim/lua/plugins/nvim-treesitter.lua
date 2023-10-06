@@ -21,10 +21,15 @@ return {
                 'dockerfile',
                 'toml',
                 'json',
+                'groovy',
                 'yaml',
+                'make',
                 'gitignore',
                 'markdown',
                 'markdown_inline',
+                'graphql',
+                'bash',
+                'tsx',
                 'css',
                 'html',
             },
@@ -88,5 +93,11 @@ return {
                 },
             },
         }
+
+        -- Register additional file extensions
+        vim.filetype.add({ extension = { tf = 'terraform' } })
+        vim.filetype.add({ extension = { tfvars = 'terraform' } })
+        vim.filetype.add({ extension = { pipeline = 'groovy' } })
+        vim.filetype.add({ extension = { multibranch = 'groovy' } })
     end,
 }
