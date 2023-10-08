@@ -45,6 +45,8 @@ require('lazy').setup({
     -- autoclose tags
     'windwp/nvim-ts-autotag',
 
+    'norcalli/nvim-colorizer.lua',
+
     ---------------------------------------------
     -- Plugins that require configuration
     ---------------------------------------------
@@ -55,8 +57,8 @@ require('lazy').setup({
     require 'plugins.gitsigns',
     -- require 'plugins.theme.solarized',
     -- require 'plugins.theme.neosolarized',
-    require 'plugins.theme.onedark',
-    -- require 'plugins.theme.nord',
+    -- require 'plugins.theme.onedark',
+    require 'plugins.theme.nord',
     require 'plugins.which-key',
     require 'plugins.lualine',
     require 'plugins.indent-blankline',

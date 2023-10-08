@@ -63,8 +63,8 @@ return {
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                -- theme = lualine_theme, -- can be set to "auto"
-                theme = custom_theme,
+                theme = lualine_theme, -- can be set to "auto"
+                -- theme = custom_theme,
                 section_separators = { left = '', right = '' },
                 component_separators = { left = '', right = '' },
                 disabled_filetypes = { 'alpha', 'dashboard', 'NvimTree', 'Outline' },
