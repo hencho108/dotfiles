@@ -1,0 +1,125 @@
+add_newline = true
+format = """$directory$git_branch$git_status$fill$cmd_duration$line_break$character"""
+palette = "nord"
+
+[palettes.nord]
+black = "#2E3440"
+directory_fg = "#3B4252" # main
+gray = "#434C5E"
+light_gray = "#4C566A"
+light_gray_bright = "#616E88"
+darkest_white = "#D8DEE9"
+darker_white = "#E5E9F0"
+white = "#ECEFF4"
+teal = "#8FBCBB"
+off_blue = "#88C0D0"
+glacier = "#81A1C1"
+blue = "#5E81AC"
+red = "#BF616A"
+orange = "#D08770"
+yellow = "#EBCB8B"
+green = "#A3BE8C"
+purple = "#B48EAD"
+
+[fill]
+symbol = " "
+
+[directory]
+style = "bold fg:off_blue"
+format = "[$path ]($style)"
+read_only = " "
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+style = "fg:yellow"
+symbol = " "
+format = "on [$symbol$branch ]($style)"
+
+[git_status]
+style = "fg:yellow"
+format = '([$all_status$ahead_behind]($style) )'
+
+[cmd_duration]
+style = "fg:light_gray_bright"
+format = "[$duration]($style)"
+
+[package]
+symbol = "󰏗 "
+
+[aws]
+symbol = "  "
+
+[golang]
+symbol = " "
+
+[python]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[docker_context]
+symbol = " "
+style = "bg:#06969A"
+format = '[ $symbol $context ]($style) $path'
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "

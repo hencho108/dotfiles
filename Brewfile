@@ -36,6 +36,8 @@ brew "zlib"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Application uninstaller
 cask "appcleaner"
 # Web browser focusing on privacy

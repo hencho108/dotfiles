@@ -40,11 +40,6 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 # Hide computer name in terminal
 export DEFAULT_USER="$(whoami)"
 
-# Vi mode
-bindkey -v
-export KEYTIMEOUT=1 # Makes switching modes quicker
-export VI_MODE_SET_CURSOR=true # Change cursor on mode change
-
 # ColorLS
 # alias ls='colorls'
 # alias lc='colorls -lA --sd'
