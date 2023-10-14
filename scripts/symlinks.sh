@@ -11,7 +11,7 @@ create_symlinks() {
     while IFS=: read -r source target || [ -n "$source" ]; do
 
         # Skip empty or invalid lines in the config file
-        if [[ -z "$source" || -z "$target" ]]; then
+        if [[ -z "$source" || -z "$target" || "$source" == \#* ]]; then
             continue
         fi
 

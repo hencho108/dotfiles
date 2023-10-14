@@ -2,10 +2,6 @@
 return {
     'nvim-lualine/lualine.nvim',
     config = function()
-        -- get lualine theme
-        -- local lualine_theme = require 'lualine.themes.onedark'
-        -- local lualine_theme = 'nord'
-
         -- Adapted from: https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/themes/onedark.lua
         local colors = {
             blue = '#61afef',
@@ -22,7 +18,7 @@ return {
             gray3 = '#3e4452',
         }
 
-        local custom_theme = {
+        local onedark_theme = {
             normal = {
                 a = { fg = colors.bg, bg = colors.green, gui = 'bold' },
                 b = { fg = colors.fg, bg = colors.gray3 },
@@ -60,11 +56,20 @@ return {
             symbols = { added = ' ', modified = ' ', removed = ' ' }, -- changes diff symbols
             cond = hide_in_width,
         }
+
+        -- Import color theme based on environment variable NVIM_THEME
+        local env_var_nvim_theme = os.getenv('NVIM_THEME') or "onedark"
+
+        -- Define a table of themes
+        local themes = {
+            onedark = onedark_theme,
+            nord = 'nord',
+        }
+
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                theme = lualine_theme, -- can be set to "auto"
-                -- theme = custom_theme,
+                theme = themes[env_var_nvim_theme], -- Set theme based on environment variable
                 section_separators = { left = '', right = '' },
                 component_separators = { left = '', right = '' },
                 disabled_filetypes = { 'alpha', 'dashboard', 'NvimTree', 'Outline' },

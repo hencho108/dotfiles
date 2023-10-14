@@ -1,7 +1,3 @@
-# Initialize Oh My Zsh or Starsihp (Pick one!)
-# source "$HOME/.config/zsh/oh-my-zsh-setup.zsh"
-source "$HOME/.config/zsh/starship-setup.zsh"
-
 # Custom zsh
 [ -f "$HOME/.config/zsh/custom.zsh" ] && source "$HOME/.config/zsh/custom.zsh"
 
@@ -14,3 +10,6 @@ source "$HOME/.config/zsh/starship-setup.zsh"
 # Secrets
 [ -f "$HOME/.env" ] && source "$HOME/.env"
 
+# Initialize Oh My Zsh or Starsihp (Pick one!)
+# source "$HOME/.config/zsh/oh-my-zsh-setup.zsh"
+source "$HOME/.config/zsh/starship-setup.zsh"

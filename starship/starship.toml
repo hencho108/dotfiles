@@ -1,31 +1,42 @@
 add_newline = true
 format = """$directory$git_branch$git_status$fill$cmd_duration$line_break$character"""
-palette = "nord"
+palette = "onedark"
+
+
+[palettes.onedark]
+directory_fg = "#61afef"
+branch_fg = "#98c379"
+secondary_elems_fg = "#56b6c2"
+blue="#61afef"
+red="#e06c75"
+green="#98c379"
+purple="#c678dd"
+cyan="#56b6c2"
+orange="#be5046"
+yellow="#e5c07b"
+gray="#828997"
+white ="#abb2bf"
+black="#2c323c"
 
 [palettes.nord]
-black = "#2E3440"
-directory_fg = "#3B4252" # main
-gray = "#434C5E"
-light_gray = "#4C566A"
-light_gray_bright = "#616E88"
-darkest_white = "#D8DEE9"
-darker_white = "#E5E9F0"
-white = "#ECEFF4"
-teal = "#8FBCBB"
-off_blue = "#88C0D0"
-glacier = "#81A1C1"
+directory_fg = "#88C0D0"
+branch_fg = "#EBCB8B"
+secondary_elems_fg = "#616E88"
 blue = "#5E81AC"
+teal = "#88C0D0"
 red = "#BF616A"
 orange = "#D08770"
-yellow = "#EBCB8B"
 green = "#A3BE8C"
 purple = "#B48EAD"
+black = "#2E3440"
+white = "#ECEFF4"
+gray = "#434C5E"
 
 [fill]
 symbol = " "
 
 [directory]
-style = "bold fg:off_blue"
+style = "bold fg:directory_fg"
 format = "[$path ]($style)"
 read_only = " "
 truncation_length = 3
@@ -39,16 +50,16 @@ truncate_to_repo = false
 "Pictures" = " "
 
 [git_branch]
-style = "fg:yellow"
+style = "fg:branch_fg"
 symbol = " "
 format = "on [$symbol$branch ]($style)"
 
 [git_status]
-style = "fg:yellow"
+style = "fg:branch_fg"
 format = '([$all_status$ahead_behind]($style) )'
 
 [cmd_duration]
-style = "fg:light_gray_bright"
+style = "fg:secondary_elems_fg"
 format = "[$duration]($style)"
 
 [package]

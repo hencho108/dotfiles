@@ -1,6 +1,11 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Themes (onedark or nord)
+export TMUX_THEME="onedark"
+export NVIM_THEME="onedark"
+export STARSHIP_THEME="onedark"
+
 # Pipenv
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -44,3 +49,11 @@ export DEFAULT_USER="$(whoami)"
 # alias ls='colorls'
 # alias lc='colorls -lA --sd'
 # source $(dirname $(gem which colorls))/tab_complete.sh
+
+# Tmux
+# Always work in a tmux session if Tmux is installed
+if which tmux 2>&1 >/dev/null; then
+  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+    tmux attach -t default || tmux new -s default; exit
+  fi
+fi

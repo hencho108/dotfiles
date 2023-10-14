@@ -22,6 +22,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Import color theme based on environment variable NVIM_THEME
+local env_var_nvim_theme = os.getenv('NVIM_THEME') or "onedark"
+
+-- Define a table of theme modules
+local themes = {
+    onedark = 'plugins.theme.onedark',
+    nord = 'plugins.theme.nord',
+}
+
 -- Setup plugins
 require('lazy').setup({
 
@@ -51,14 +60,11 @@ require('lazy').setup({
     -- Plugins that require configuration
     ---------------------------------------------
 
+    require(themes[env_var_nvim_theme]),
     require 'plugins.lsp.nvim-lspconfig',
     require 'plugins.lsp.null-ls',
     require 'plugins.nvim-cmp',
     require 'plugins.gitsigns',
-    -- require 'plugins.theme.solarized',
-    -- require 'plugins.theme.neosolarized',
-    -- require 'plugins.theme.onedark',
-    require 'plugins.theme.nord',
     require 'plugins.which-key',
     require 'plugins.lualine',
     require 'plugins.indent-blankline',
