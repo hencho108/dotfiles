@@ -64,6 +64,8 @@ cask "obsidian"
 cask "rectangle"
 # Music streaming service
 cask "spotify"
+# Keyboard customizer
+cask "karabiner-elements"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
