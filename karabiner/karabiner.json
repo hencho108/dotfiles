@@ -1,0 +1,41 @@
+{
+    "profiles": [
+        {
+            "name": "Default profile",
+            "selected": true,
+            "complex_modifications": {
+                "parameters": {
+                    "basic.to_if_alone_timeout_milliseconds": 300
+                },
+                "rules": [
+                    {
+                        "description": "Remap Caps Lock to Ctrl when held, Esc when tapped with 100ms timeout",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
