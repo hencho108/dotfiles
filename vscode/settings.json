@@ -24,10 +24,7 @@
   "window.zoomLevel": 1.0,
   "editor.folding": false,
   "zenMode.hideLineNumbers": false,
-  "zenMode.hideTabs": false,
-  "editor.rulers": [
-    79
-  ],
+  "editor.rulers": [79],
   //
   // === Terminal ===
   //
@@ -59,16 +56,10 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     },
-    "editor.formatOnType": true,
+    "editor.formatOnType": true
   },
-  "isort.args": [
-    "--profile",
-    "black"
-  ],
-  "flake8.args": [
-    "--max-line-length=88",
-    "--extend-ignore=E203,E501,E731"
-  ],
+  "isort.args": ["--profile", "black"],
+  "flake8.args": ["--max-line-length=88", "--extend-ignore=E203,E501,E731"],
   // Javascript
   "javascript.updateImportsOnFileMove.enabled": "always",
   // Typescript
@@ -106,279 +97,137 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     // Switch between buffers using Tab
     {
-      "before": [
-        "<Tab>"
-      ],
-      "commands": [
-        ":bnext"
-      ]
+      "before": ["<Tab>"],
+      "commands": [":bnext"]
     },
     {
-      "before": [
-        "<S-Tab>"
-      ],
-      "commands": [
-        ":bprev"
-      ]
+      "before": ["<S-Tab>"],
+      "commands": [":bprev"]
     },
     // Create splits
     {
-      "before": [
-        "leader",
-        "v"
-      ],
-      "commands": [
-        ":vsplit"
-      ]
+      "before": ["leader", "v"],
+      "commands": [":vsplit"]
     },
     {
-      "before": [
-        "leader",
-        "h"
-      ],
-      "commands": [
-        ":split"
-      ]
+      "before": ["leader", "h"],
+      "commands": [":split"]
     },
     // Navigate panes using CTRL+hjkl
     {
-      "before": [
-        "<C-h>"
-      ],
-      "commands": [
-        "workbench.action.navigateLeft"
-      ]
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
     },
     {
-      "before": [
-        "<C-j>"
-      ],
-      "commands": [
-        "workbench.action.navigateDown"
-      ]
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
     },
     {
-      "before": [
-        "<C-k>"
-      ],
-      "commands": [
-        "workbench.action.navigateUp"
-      ]
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
     },
     {
-      "before": [
-        "<C-l>"
-      ],
-      "commands": [
-        "workbench.action.navigateRight"
-      ]
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
     },
     // Navigate the Explorer
     {
-      "before": [
-        "leader",
-        "E"
-      ],
-      "commands": [
-        "workbench.explorer.fileView.focus"
-      ],
+      "before": ["leader", "E"],
+      "commands": ["workbench.explorer.fileView.focus"]
     },
     {
-      "before": [
-        "leader",
-        "e"
-      ],
-      "commands": [
-        "workbench.action.toggleSidebarVisibility"
-      ],
+      "before": ["leader", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     // Terminal
     {
-      "before": [
-        "leader",
-        "t"
-      ],
-      "commands": [
-        "workbench.action.togglePanel"
-      ],
+      "before": ["leader", "t"],
+      "commands": ["workbench.action.togglePanel"]
     },
     // Closing and saving buffers
     {
-      "before": [
-        "leader",
-        "s"
-      ],
-      "commands": [
-        ":w!"
-      ]
+      "before": ["leader", "s"],
+      "commands": [":w!"]
     },
     {
-      "before": [
-        "leader",
-        "q"
-      ],
-      "commands": [
-        ":q!"
-      ]
+      "before": ["leader", "q"],
+      "commands": [":q!"]
     },
     {
-      "before": [
-        "leader",
-        "x"
-      ],
-      "commands": [
-        ":x!"
-      ]
+      "before": ["leader", "x"],
+      "commands": [":x!"]
     },
     // Jump to markers
     {
-      "before": [
-        "[",
-        "d"
-      ],
-      "commands": [
-        "editor.action.marker.prev"
-      ]
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
     },
     {
-      "before": [
-        "]",
-        "d"
-      ],
-      "commands": [
-        "editor.action.marker.next"
-      ]
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
     },
     // Code actions
     {
-      "before": [
-        "leader",
-        "c",
-        "a"
-      ],
-      "commands": [
-        "editor.action.quickFix"
-      ]
+      "before": ["leader", "c", "a"],
+      "commands": ["editor.action.quickFix"]
     },
     // Search files
     {
-      "before": [
-        "leader",
-        "s",
-        "f"
-      ],
-      "commands": [
-        "workbench.action.quickOpen"
-      ]
+      "before": ["leader", "s", "f"],
+      "commands": ["workbench.action.quickOpen"]
     },
     // Command prompt
     {
-      "before": [
-        "leader",
-        "p"
-      ],
-      "commands": [
-        "workbench.action.showCommands"
-      ]
+      "before": ["leader", "p"],
+      "commands": ["workbench.action.showCommands"]
     },
     // Show definition
     {
-      "before": [
-        "g",
-        "d"
-      ],
-      "commands": [
-        "editor.action.showDefinitionPreviewHover"
-      ]
+      "before": ["g", "d"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
     },
     // Toggle activity bar
     {
-      "before": [
-        "leader",
-        "u",
-        "a"
-      ],
-      "commands": [
-        "workbench.action.toggleActivityBarVisibility"
-      ]
+      "before": ["leader", "u", "a"],
+      "commands": ["workbench.action.toggleActivityBarVisibility"]
     },
     // Move panes
     {
-      "before": [
-        "leader",
-        "w",
-        "l"
-      ],
-      "commands": [
-        "workbench.action.moveActiveEditorGroupRight"
-      ]
+      "before": ["leader", "w", "l"],
+      "commands": ["workbench.action.moveActiveEditorGroupRight"]
     },
     {
-      "before": [
-        "leader",
-        "w",
-        "h"
-      ],
-      "commands": [
-        "workbench.action.moveActiveEditorGroupLeft"
-      ]
+      "before": ["leader", "w", "h"],
+      "commands": ["workbench.action.moveActiveEditorGroupLeft"]
     },
     {
-      "before": [
-        "leader",
-        "w",
-        "j"
-      ],
-      "commands": [
-        "workbench.action.moveActiveEditorGroupDown"
-      ]
+      "before": ["leader", "w", "j"],
+      "commands": ["workbench.action.moveActiveEditorGroupDown"]
     },
     {
-      "before": [
-        "leader",
-        "w",
-        "k"
-      ],
-      "commands": [
-        "workbench.action.moveActiveEditorGroupUp"
-      ]
+      "before": ["leader", "w", "k"],
+      "commands": ["workbench.action.moveActiveEditorGroupUp"]
     },
     // Resize panes
     {
-      "before": [
-        "up",
-      ],
-      "commands": [
-        "workbench.action.increaseViewSize"
-      ]
+      "before": ["up"],
+      "commands": ["workbench.action.increaseViewSize"]
     },
     {
-      "before": [
-        "down",
-      ],
-      "commands": [
-        "workbench.action.decreaseViewSize"
-      ]
-    },
+      "before": ["down"],
+      "commands": ["workbench.action.decreaseViewSize"]
+    }
   ],
   "vim.visualModeKeyBindings": [
     // Allow indenting from visual mode
     {
-      "before": [
-        "<"
-      ],
-      "commands": [
-        "editor.action.outdentLines"
-      ]
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
     },
     {
-      "before": [
-        ">"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
-    },
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    }
   ],
   //
   // === Other ===
@@ -386,5 +235,5 @@
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
-  "aws.telemetry": false,
+  "aws.telemetry": false
 }

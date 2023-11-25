@@ -31,3 +31,11 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q'
 
+# Yank to the system clipboard
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | pbcopy -i
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
