@@ -45,6 +45,11 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 # Hide computer name in terminal
 export DEFAULT_USER="$(whoami)"
 
+# Load Git completion
+zstyle ':completion:*:*:git:*' script $HOME/.config/zsh/git-completion.bash
+fpath=($HOME/.config/zsh $fpath)
+autoload -Uz compinit && compinit
+
 # ColorLS
 # alias ls='colorls'
 # alias lc='colorls -lA --sd'

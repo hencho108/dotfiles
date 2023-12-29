@@ -4,6 +4,7 @@ alias restart='sudo reboot'
 alias suspend='sudo pm-suspend'
 alias sleep='pmset sleepnow'
 alias c='clear'
+alias e='exit'
 
 # Git
 alias g='git'
