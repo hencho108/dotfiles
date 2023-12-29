@@ -1,5 +1,5 @@
 add_newline = true
-format = """$directory$git_branch$git_status$fill$cmd_duration$line_break$character"""
+format = """$directory$git_branch$git_status$fill$aws$nodejs$lua$python$docker_context$time$cmd_duration$line_break$character"""
 palette = "onedark"
 
 
@@ -59,6 +59,7 @@ style = "fg:branch_fg"
 format = '([$all_status$ahead_behind]($style) )'
 
 [cmd_duration]
+min_time = 500
 style = "fg:secondary_elems_fg"
 format = "[$duration]($style)"
 
@@ -67,12 +68,16 @@ symbol = "󰏗 "
 
 [aws]
 symbol = "  "
+format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
 
 [golang]
 symbol = " "
 
 [python]
 symbol = " "
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ""
 
 [haskell]
 symbol = " "
