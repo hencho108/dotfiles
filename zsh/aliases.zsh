@@ -23,6 +23,7 @@ alias gb='git branch '
 alias gd='git diff'
 alias gco='git checkout '
 alias gcob='git checkout -b '
+alias gcofzf='git branch | fzf | xargs git checkout' # Select branch with fzf
 alias gr='git remote'
 alias grs='git remote show'
 alias glgg='git log --graph --max-count=5 --decorate --pretty="oneline"'
@@ -33,22 +34,25 @@ alias ggpush='git push origin $(current_branch)'
 alias gc='git commit -v'
 alias gcm='git commit -m'
 alias gcmnv='git commit --no-verify -m'
-# Git commit with ticket ID from current branch
-alias gcmt='''
-    branch_name=$(git branch --show-current);
-    ticket_id=$(echo "$branch_name" | awk -F "-" "{print toupper(\$1\"-\"\$2)}");
-    echo -n "Enter commit message ==> $ticket_id: " && \
-        read commit_message && \
-        git commit -m "$ticket_id: $commit_message"
-    '''
-quick_commit_push_with_ticket_id() {
-  local branch_name ticket_id commit_message
+# Function to commit with ticket ID from current branch, with optional push
+quick_commit() {
+  local branch_name ticket_id commit_message push_flag
   branch_name=$(git branch --show-current)
   ticket_id=$(echo "$branch_name" | awk -F '-' '{print toupper($1"-"$2)}')
   commit_message="$ticket_id: $*"
-  git commit --no-verify -m "$commit_message" && git push
+  push_flag=$1
+
+  if [[ "$push_flag" == "--push" ]]; then
+    # Remove '--push' from the commit message
+    commit_message="$ticket_id: ${*:2}"
+    git commit --no-verify -m "$commit_message" && git push
+  else
+    git commit --no-verify -m "$commit_message"
+  fi
 }
-alias gqcp='quick_commit_push_with_ticket_id'
+
+alias gqc='quick_commit'
+alias gqcp='quick_commit --push'
 
 # Neovim
 alias vim='nvim'
