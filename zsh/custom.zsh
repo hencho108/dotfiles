@@ -10,7 +10,7 @@ export STARSHIP_THEME="onedark"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
-# export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_VENV_IN_PROJECT=1
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -80,8 +80,8 @@ fh() {
 
 # Tmux
 # Always work in a tmux session if Tmux is installed
-# if which tmux 2>&1 >/dev/null; then
-#   if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-#     tmux attach -t default || tmux new -s default; exit
-#   fi
-# fi
+if which tmux 2>&1 >/dev/null; then
+  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+    tmux attach -t default || tmux new -s default; exit
+  fi
+fi

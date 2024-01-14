@@ -60,7 +60,7 @@ format = '([$all_status$ahead_behind]($style) )'
 
 [cmd_duration]
 min_time = 500
-style = "fg:secondary_elems_fg"
+style = "fg:gray"
 format = "[$duration]($style)"
 
 [package]

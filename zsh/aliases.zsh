@@ -10,8 +10,9 @@ alias e='exit'
 alias g='git'
 alias ga='git add'
 alias gafzf='git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git add' # Git add with fzf
-alias grfzf='git diff --name-only --cached | fzf -m --print0 | xargs -0 -o -t git restore' # Git restore with fzf
-alias grsfzf='git diff --name-only --cached | fzf -m --print0 | xargs -0 -o -t git restore --staged' # Git restore --staged with fzf
+alias grmfzf='git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git rm' # Git rm with fzf
+alias grfzf='git diff --name-only | fzf -m --print0 | xargs -0 -o -t git restore' # Git restore with fzf
+alias grsfzf='git diff --name-only | fzf -m --print0 | xargs -0 -o -t git restore --staged' # Git restore --staged with fzf
 alias gf='git fetch'
 alias gs='git status'
 alias gss='git status -s'
@@ -44,9 +45,9 @@ quick_commit() {
   commit_message="$ticket_id: $*"
   push_flag=$1
 
-  if [[ "$push_flag" == "--push" ]]; then
-    # Remove '--push' from the commit message
-    commit_message="$ticket_id: ${*:2}"
+  if [[ "$push_flag" == "push" ]]; then
+    # Remove 'push' from the commit message
+    commit_message="$ticket_id: ${*:5}"
     git commit --no-verify -m "$commit_message" && git push
   else
     git commit --no-verify -m "$commit_message"
@@ -54,7 +55,7 @@ quick_commit() {
 }
 
 alias gqc='quick_commit'
-alias gqcp='quick_commit --push'
+alias gqcp='quick_commit push'
 
 # Neovim
 alias vim='nvim'
