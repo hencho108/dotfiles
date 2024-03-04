@@ -67,7 +67,7 @@ format = "[$duration]($style)"
 symbol = "󰏗 "
 
 [aws]
-symbol = "  "
+symbol = " "
 format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
 
 [golang]

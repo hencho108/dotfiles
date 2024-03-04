@@ -59,8 +59,19 @@ alias gqcp='quick_commit push'
 
 # Neovim
 alias vim='nvim'
-alias vi='nvim'
+# If poetry is installed and an environment exists, run "poetry run nvim"
+poetry_run_nvim() {
+  if command -v poetry >/dev/null 2>&1 && [ -f "poetry.lock" ]; then
+    poetry run nvim "$@"
+  else
+    nvim "$@"
+  fi
+}
+alias vi='poetry_run_nvim'
 
 # Folders
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
+
+# Ranger
+alias r=". ranger"
