@@ -1,28 +1,13 @@
--- Format on save
+-- Format on save and linters
 return {
   'nvimtools/none-ls.nvim',
   dependencies = {
-    'jayp0521/mason-null-ls.nvim', -- bridges gap b/w mason & null-ls
     'nvimtools/none-ls-extras.nvim',
   },
   config = function()
     local null_ls = require 'null-ls'
     local formatting = null_ls.builtins.formatting   -- to setup formatters
     local diagnostics = null_ls.builtins.diagnostics -- to setup linters
-
-    -- list of formatters & linters for mason to install
-    require('mason-null-ls').setup {
-      ensure_installed = {
-        'prettier', -- ts/js formatter
-        'stylua',   -- lua formatter
-        'isort',
-        'flake8',
-        'black',
-        'shfmt',
-        -- 'pylint',
-      },
-      automatic_installation = true,
-    }
 
     local sources = {
       formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
@@ -31,7 +16,6 @@ return {
       formatting.isort.with { extra_args = { '--profile', 'black', '--multi-line', '3' } },
       formatting.shfmt.with { args = { '-i', '4' } },
       diagnostics.checkmake,
-      -- diagnostics.pylint,
       -- R - Refactoring-related checks: Enforces the use of snake_case naming convention.
       -- C - Convention-related checks: Ensures adherence to established coding standards.
       -- W0511: Disables the TODO warning.
@@ -42,13 +26,14 @@ return {
       require('none-ls.diagnostics.flake8').with {
         extra_args = {
           '--max-line-length=88',
-          '--disable=R,duplicate-code,W0231,W0511,W1201,W1202,W0707,C0301,no-init',
+          '--ignore=R,duplicate-code,W0231,W0511,W1201,W1202,W0707,C0301,no-init',
         },
       },
     }
 
     local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
     null_ls.setup {
+      debug = true,
       sources = sources,
       -- you can reuse a shared lspconfig on_attach callback here
       on_attach = function(client, bufnr)

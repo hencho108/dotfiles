@@ -34,7 +34,7 @@ require('lazy').setup({
   require 'plugins.vim-tmux-navigator',
   require 'plugins.lsp',
   require 'plugins.autocompletion',
-  require 'plugins.autoformat',
+  require 'plugins.none-ls',
   require 'plugins.todo-comments',
   require 'plugins.sleuth',
   require 'plugins.gitsigns',
