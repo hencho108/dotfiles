@@ -2,7 +2,6 @@ add_newline = true
 format = """$directory$git_branch$git_status$fill$aws$nodejs$lua$python$docker_context$time$cmd_duration$line_break$character"""
 palette = "onedark"
 
-
 [palettes.onedark]
 directory_fg = "#61afef"
 branch_fg = "#98c379"
@@ -20,13 +19,14 @@ black="#2c323c"
 
 [palettes.nord]
 directory_fg = "#88C0D0"
-branch_fg = "#EBCB8B"
+branch_fg = "#A3BE8C"
 secondary_elems_fg = "#616E88"
 blue = "#5E81AC"
 teal = "#88C0D0"
 red = "#BF616A"
 orange = "#D08770"
 green = "#A3BE8C"
+yellow = "#EBCB8B"
 purple = "#B48EAD"
 black = "#2E3440"
 white = "#ECEFF4"
@@ -44,7 +44,7 @@ truncation_symbol = "…/"
 truncate_to_repo = false
 
 [directory.substitutions]
-"Documents" = "󰈙 "
+"Documents" = "󰈙"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
@@ -74,6 +74,7 @@ format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
 symbol = " "
 
 [python]
+style = "bold fg:yellow"
 symbol = " "
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 pyenv_version_name = true
