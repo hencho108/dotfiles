@@ -4,6 +4,8 @@ This repository contains my dotfiles, which are the configuration files and scri
 
 These dotfiles help me maintain a consistent setup across different machines and save time when setting up new environments.
 
+![screenshot](img/nvim-demo.png)
+
 ## Getting Started
 
 To set up these dotfiles on your system, follow these simple steps:
