@@ -38,11 +38,11 @@ return {
       -- W1201, W1202: Disables log format warnings, which may be false positives.
       -- W0231: Disables the super-init-not-called warning as pylint may not comprehend six.with_metaclass(ABCMeta).
       -- W0707: Disables the raise-missing-from warning, which is incompatible with Python 2 backward compatibility.
-      -- C0301: Disables the "line too long" warning, as the Black formatter automatically handles long lines.
+      -- E501: Disables the "line too long" warning, as the Black formatter automatically handles long lines.
       require('none-ls.diagnostics.flake8').with {
         extra_args = {
           '--max-line-length=88',
-          '--ignore=R,duplicate-code,W0231,W0511,W1201,W1202,W0707,C0301,no-init',
+          '--ignore=R,duplicate-code,W0231,W0511,W1201,W1202,W0707,E501,no-init',
         },
       },
     }
