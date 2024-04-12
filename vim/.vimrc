@@ -43,6 +43,12 @@ set autoindent " Auto-indent new lines
 set shortmess+=c " Don't show completion menu messages
 set iskeyword+=- " Treat hyphenated words as whole words
 set showmatch " show the matching part of pairs [] {} and ()
+set laststatus=2 " Show status bar
+set statusline=%f " Path to the file
+set statusline+=%= " Switch to the right side
+set statusline+=%l " Current line
+set statusline+=/ " Separator
+set statusline+=%L " Total lines
 
 
 " ========================================
@@ -128,12 +134,8 @@ inoremap jk <ESC>
 inoremap kj <ESC>
 
 " Stay in indent mode
-vnoremap < <gv
-vnoremap > >gv
-
-" Move text up and down
-vnoremap <A-j> :m .+1<CR>==
-vnoremap <A-k> :m .-2<CR>==
+" vnoremap < <gv
+" vnoremap > >gv
 
 " Keep last yanked when pasting
 vnoremap p "_dP
