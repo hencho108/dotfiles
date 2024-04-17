@@ -1,5 +1,5 @@
 add_newline = true
-format = """$directory$git_branch$git_status$fill$aws$nodejs$lua$python$docker_context$time$cmd_duration$line_break$character"""
+format = """$directory$git_branch$git_status$fill$nodejs$lua$python$docker_context$time$cmd_duration$line_break$character"""
 palette = "onedark"
 
 [palettes.onedark]
@@ -66,9 +66,10 @@ format = "[$duration]($style)"
 [package]
 symbol = "󰏗 "
 
-[aws]
-symbol = " "
-format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+# [aws]
+# symbol = " "
+# symbol = " "
+# format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
 
 [golang]
 symbol = " "

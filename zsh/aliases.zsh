@@ -58,7 +58,6 @@ alias gqc='quick_commit'
 alias gqcp='quick_commit push'
 
 # Neovim
-alias vim='nvim'
 # If poetry is installed and an environment exists, run "poetry run nvim"
 poetry_run_nvim() {
   if command -v poetry >/dev/null 2>&1 && [ -f "poetry.lock" ]; then

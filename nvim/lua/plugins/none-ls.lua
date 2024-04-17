@@ -31,6 +31,7 @@ return {
       formatting.black,
       formatting.isort.with { extra_args = { '--profile', 'black', '--multi-line', '3' } },
       formatting.shfmt.with { args = { '-i', '4' } },
+      formatting.terraform_fmt,
       diagnostics.checkmake,
       -- R - Refactoring-related checks: Enforces the use of snake_case naming convention.
       -- C - Convention-related checks: Ensures adherence to established coding standards.
