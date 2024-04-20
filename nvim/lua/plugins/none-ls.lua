@@ -13,39 +13,25 @@ return {
     -- list of formatters & linters for mason to install
     require('mason-null-ls').setup {
       ensure_installed = {
+        'checkmake',
         'prettier', -- ts/js formatter
         'stylua',   -- lua formatter
         'eslint_d', -- ts/js linter
-        'isort',
-        'flake8',
-        'black',
         'shfmt',
+        'ruff',
       },
       -- auto-install configured formatters & linters (with null-ls)
       automatic_installation = true,
     }
 
     local sources = {
+      diagnostics.checkmake,
       formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
       formatting.stylua,
-      formatting.black,
-      formatting.isort.with { extra_args = { '--profile', 'black', '--multi-line', '3' } },
       formatting.shfmt.with { args = { '-i', '4' } },
       formatting.terraform_fmt,
-      diagnostics.checkmake,
-      -- R - Refactoring-related checks: Enforces the use of snake_case naming convention.
-      -- C - Convention-related checks: Ensures adherence to established coding standards.
-      -- W0511: Disables the TODO warning.
-      -- W1201, W1202: Disables log format warnings, which may be false positives.
-      -- W0231: Disables the super-init-not-called warning as pylint may not comprehend six.with_metaclass(ABCMeta).
-      -- W0707: Disables the raise-missing-from warning, which is incompatible with Python 2 backward compatibility.
-      -- E501: Disables the "line too long" warning, as the Black formatter automatically handles long lines.
-      require('none-ls.diagnostics.flake8').with {
-        extra_args = {
-          '--max-line-length=88',
-          '--ignore=R,duplicate-code,W0231,W0511,W1201,W1202,W0707,E501,no-init',
-        },
-      },
+      require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
+      require 'none-ls.formatting.ruff_format',
     }
 
     local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
@@ -60,8 +46,6 @@ return {
             group = augroup,
             buffer = bufnr,
             callback = function()
-              -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-              -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
               vim.lsp.buf.format { async = false }
             end,
           })
