@@ -13,6 +13,5 @@ setopt HIST_IGNORE_ALL_DUPS
 # Secrets
 [ -f "$HOME/.env" ] && source "$HOME/.env"
 
-# Initialize Oh My Zsh or Starsihp (Pick one!)
-# source "$HOME/.config/zsh/oh-my-zsh-setup.zsh"
+# Initialize Starsihp
 source "$HOME/.config/zsh/starship-setup.zsh"

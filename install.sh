@@ -34,8 +34,6 @@ info "==========================================================================
 info "Terminal"
 info "================================================================================"
 
-# install_oh_my_zsh
-# install_p10k
 info "Adding .hushlogin file to suppress 'last login' message in terminal..."
 touch ~/.hushlogin
 
