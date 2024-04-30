@@ -325,7 +325,7 @@
                     "value": 1
                   }
                 ],
-                "description": "Open Spotify (Brave)",
+                "description": "Open Spotify",
                 "from": {
                   "key_code": "y",
                   "modifiers": {
@@ -336,7 +336,79 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Spotify (Brave).app'"
+                    "shell_command": "open -a 'Spotify.app'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_e",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Open Preview",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Preview.app'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_e",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Open VS Code",
+                "from": {
+                  "key_code": "v",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Visual Studio Code.app'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_e",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Open DBeaver",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'DBeaver.app'"
                   }
                 ],
                 "type": "basic"
@@ -444,7 +516,7 @@
                 ],
                 "description": "Window: center-half",
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "slash",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -478,6 +550,30 @@
                 "to": [
                   {
                     "shell_command": "open -g rectangle://execute-action?name=maximize"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_w",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Window: almost maximize",
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -g rectangle://execute-action?name=almost-maximize"
                   }
                 ],
                 "type": "basic"
