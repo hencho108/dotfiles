@@ -5,7 +5,6 @@
 . scripts/osx-defaults.sh
 . scripts/mac-apps.sh
 . scripts/oh-my-zsh.sh
-. scripts/colorls.sh
 . scripts/symlinks.sh
 
 info "Dotfiles intallation initialized..."
@@ -37,7 +36,6 @@ info "==========================================================================
 
 # install_oh_my_zsh
 # install_p10k
-# install_colorls
 info "Adding .hushlogin file to suppress 'last login' message in terminal..."
 touch ~/.hushlogin
 

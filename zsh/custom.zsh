@@ -73,11 +73,6 @@ fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
-# ColorLS
-# alias ls='colorls'
-# alias lc='colorls -lA --sd'
-# source $(dirname $(gem which colorls))/tab_complete.sh
-
 # Tmux
 # Always work in a tmux session if Tmux is installed
 if which tmux 2>&1 >/dev/null; then
@@ -85,3 +80,9 @@ if which tmux 2>&1 >/dev/null; then
     tmux attach -t default || tmux new -s default; exit
   fi
 fi
+
+# Redshift
+export ODBCINI="$HOME/.odbc.ini"
+export ODBCSYSINI="/opt/amazon/redshift/Setup"
+export AMAZONREDSHIFTODBCINI="/opt/amazon/redshift/lib/amazon.redshiftodbc.ini"
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/lib"
