@@ -66,6 +66,10 @@ apply_osx_system_defaults() {
     defaults write com.apple.dock largesize -float 128
     defaults write com.apple.dock "minimize-to-application" -bool true
     defaults write com.apple.dock tilesize -float 32
+
+    # Rectangle
+    defaults write com.knollsoft.Rectangle almostMaximizeHeight -float 1
+    defaults write com.knollsoft.Rectangle almostMaximizeWidth -float 0.85
 }
 
 if [ "$(basename "$0")" = "$(basename "${BASH_SOURCE[0]}")" ]; then
