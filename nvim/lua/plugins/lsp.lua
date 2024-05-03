@@ -138,22 +138,24 @@ return { -- LSP Configuration & Plugins
       },
       dockerls = {},
       docker_compose_language_service = {},
-      -- pyright = {
-      --   settings = {
-      --     pyright = {
-      --       disableOrganizeImports = true,
-      --     },
-      --     python = {
-      --       analysis = {
-      --         ignore = { '*' },
-      --         typeCheckingMode = 'off',
-      --         autoSearchPaths = true,
-      --         useLibraryCodeForTypes = true,
-      --       },
-      --       disableLanguageServices = false,
-      --     },
-      --   },
-      -- },
+      pyright = {
+        settings = {
+          pyright = {
+            -- Using Ruff's import organizer
+            disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              -- Ignore all files for analysis to exclusively use Ruff for linting
+              ignore = { '*' },
+              typeCheckingMode = 'off',
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+            },
+            disableLanguageServices = false,
+          },
+        },
+      },
       ruff_lsp = {
         -- Notes on code actions: https://github.com/astral-sh/ruff-lsp/issues/119#issuecomment-1595628355
         -- Get isort like behavior: https://github.com/astral-sh/ruff/issues/8926#issuecomment-1834048218
