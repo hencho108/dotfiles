@@ -1,5 +1,5 @@
-require 'core.options'  -- Load general options
-require 'core.keymaps'  -- Load general keymaps
+require 'core.options' -- Load general options
+require 'core.keymaps' -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 
 -- Install package manager
@@ -28,28 +28,29 @@ local themes = {
 
 -- Setup plugins
 require('lazy').setup({
+  -- Essential plugins
   require(themes[env_var_nvim_theme]),
-  require 'plugins.alpha',
-  require 'plugins.fugitive',
-  require 'plugins.rhubarb',
-  require 'plugins.ts-autotag',
+  require 'plugins.telescope',
+  require 'plugins.treesitter',
   require 'plugins.vim-tmux-navigator',
   require 'plugins.lsp',
   require 'plugins.autocompletion',
   require 'plugins.none-ls',
-  require 'plugins.todo-comments',
-  require 'plugins.sleuth',
-  require 'plugins.gitsigns',
-  require 'plugins.which-key',
   require 'plugins.lualine',
+  require 'plugins.bufferline',
+  require 'plugins.neo-tree',
+  -- Nice to have
+  require 'plugins.alpha',
   require 'plugins.indent-blankline',
   require 'plugins.comment',
-  require 'plugins.telescope',
-  require 'plugins.treesitter',
+  require 'plugins.sleuth',
+  require 'plugins.fugitive',
   require 'plugins.debug',
-  require 'plugins.neo-tree',
+  require 'plugins.todo-comments',
+  require 'plugins.gitsigns',
+  require 'plugins.which-key',
   require 'plugins.autopairs',
-  require 'plugins.bufferline',
+  require 'plugins.ts-autotag',
   require 'plugins.colorizer',
   require 'plugins.database',
 }, {

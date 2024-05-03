@@ -1,7 +1,6 @@
 # Troubleshooting Notes for Neovim Setup
 
 - Check generate health of Neovim setup. `:checkhealth`
-- Generate package commit hashes. `:PackerSnapshot test` (saved at ~/.config/nvim/packer.nvim)
 - Update Treesitter. `:TSUpdate`
 - Check LSP installation. `:Mason`
 - Fix broken icons
