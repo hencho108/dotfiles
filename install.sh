@@ -8,38 +8,41 @@
 . scripts/symlinks.sh
 
 info "Dotfiles intallation initialized..."
+read -p "Install apps? [y/n] " install_apps
 read -p "Overwrite existing dotfiles? [y/n] " overwrite_dotfiles
 
-info "================================================================================"
-info "Prerequisites"
-info "================================================================================"
+if [[ "$install_apps" == "y" ]]; then
+    info "===================="
+    info "Prerequisites"
+    info "===================="
 
-install_xcode
-install_homebrew
+    install_xcode
+    install_homebrew
 
-info "================================================================================"
+    info "===================="
+    info "Apps"
+    info "===================="
+
+    install_brewfile_apps
+fi
+
+info "===================="
 info "OSX System Defaults"
-info "================================================================================"
+info "===================="
 
 register_keyboard_shortcuts
 apply_osx_system_defaults
 
-info "================================================================================"
-info "Apps"
-info "================================================================================"
-
-install_brewfile_apps
-
-info "================================================================================"
+info "===================="
 info "Terminal"
-info "================================================================================"
+info "===================="
 
 info "Adding .hushlogin file to suppress 'last login' message in terminal..."
 touch ~/.hushlogin
 
-info "================================================================================"
+info "===================="
 info "Symbolic Links"
-info "================================================================================"
+info "===================="
 
 chmod +x ./scripts/symlinks.sh
 if [[ "$overwrite_dotfiles" == "y" ]]; then
