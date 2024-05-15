@@ -61,6 +61,12 @@ apply_osx_system_defaults() {
     # Set weekly software update checks
     defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 7
 
+    # Spaces span all displays
+    defaults write com.apple.spaces "spans-displays" -bool true
+
+    # Do not rearrange spaces automatically
+    defaults write com.apple.dock "mru-spaces" -bool false
+
     # Set Dock autohide
     defaults write com.apple.dock autohide -bool true
     defaults write com.apple.dock largesize -float 128
