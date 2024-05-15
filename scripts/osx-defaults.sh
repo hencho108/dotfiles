@@ -62,7 +62,7 @@ apply_osx_system_defaults() {
     defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 7
 
     # Spaces span all displays
-    defaults write com.apple.spaces "spans-displays" -bool true
+    defaults write com.apple.spaces "spans-displays" -bool false
 
     # Do not rearrange spaces automatically
     defaults write com.apple.dock "mru-spaces" -bool false
