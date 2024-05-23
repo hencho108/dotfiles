@@ -17,10 +17,12 @@ return {
         right_mouse_command = 'Bdelete! %d', -- can be a string | function, see "Mouse actions"
         left_mouse_command = 'buffer %d',    -- can be a string | function, see "Mouse actions"
         middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
-        buffer_close_icon = '󰅖',
-        path_components = 1,                 -- Show only the file name without the directory
-        modified_icon = '●',
+        -- buffer_close_icon = '󰅖',
+        buffer_close_icon = '✗',
+        -- buffer_close_icon = '✕',
         close_icon = '',
+        path_components = 1, -- Show only the file name without the directory
+        modified_icon = '●',
         left_trunc_marker = '',
         right_trunc_marker = '',
         max_name_length = 30,

@@ -67,6 +67,7 @@ poetry_run_nvim() {
   fi
 }
 alias vi='poetry_run_nvim'
+alias v='poetry_run_nvim'
 
 # Folders
 alias doc="$HOME/Documents"
