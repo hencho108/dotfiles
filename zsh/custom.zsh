@@ -2,9 +2,9 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Themes (onedark or nord)
-export TMUX_THEME="onedark"
+export TMUX_THEME="nord"
 export NVIM_THEME="nord"
-export STARSHIP_THEME="onedark"
+export STARSHIP_THEME="nord"
 
 # Pipenv
 export LANG="en_US.UTF-8"

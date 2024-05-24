@@ -14,9 +14,11 @@ config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = false
 config.font_size = 12.5
 config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
-config.color_scheme = "nord"
+config.color_scheme = "Nord (Gogh)"
+-- config.color_scheme = "One Dark (Gogh)"
 config.colors = {
-	foreground = "#abb2bf",
+	-- foreground = "#abb2bf",
+	-- foreground = "#D8DEE9",
 }
 config.enable_tab_bar = false
 config.window_padding = {

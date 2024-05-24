@@ -1,6 +1,6 @@
 add_newline = true
 format = """$directory$git_branch$git_status$fill$nodejs$lua$python$docker_context$time$cmd_duration$line_break$character"""
-palette = "onedark"
+palette = "nord"
 
 [palettes.onedark]
 directory_fg = "#61afef"
@@ -18,7 +18,7 @@ white ="#abb2bf"
 black="#2c323c"
 
 [palettes.nord]
-directory_fg = "#88C0D0"
+directory_fg = "#5E81AC"
 branch_fg = "#A3BE8C"
 secondary_elems_fg = "#616E88"
 blue = "#5E81AC"
@@ -29,7 +29,8 @@ green = "#A3BE8C"
 yellow = "#EBCB8B"
 purple = "#B48EAD"
 black = "#2E3440"
-white = "#ECEFF4"
+# white = "#ECEFF4" # lighter white
+white="#D8DEE9" # darker white
 gray = "#434C5E"
 
 [fill]
@@ -52,7 +53,7 @@ truncate_to_repo = false
 [git_branch]
 style = "fg:branch_fg"
 symbol = " "
-format = "on [$symbol$branch ]($style)"
+format = "[on](white) [$symbol$branch ]($style)"
 
 [git_status]
 style = "fg:branch_fg"
