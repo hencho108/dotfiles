@@ -9,9 +9,3 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Work
 [ -f "$HOME/.config/zsh/work.zsh" ] && source "$HOME/.config/zsh/work.zsh"
-
-# Secrets
-[ -f "$HOME/.env" ] && source "$HOME/.env"
-
-# Initialize Starsihp
-source "$HOME/.config/zsh/starship-setup.zsh"

@@ -1,15 +1,7 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Themes (onedark or nord)
-export TMUX_THEME="nord"
-export NVIM_THEME="nord"
-export STARSHIP_THEME="nord"
-
 # Pipenv
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
 export PIPENV_VENV_IN_PROJECT=1
 
 # Pyenv
@@ -21,34 +13,21 @@ eval "$(pyenv init -)" # Initialize pyenv when a new shell spawns
 export PATH="$HOME/.local/bin:$PATH"
 # alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 
-# zettl
-export Z_EDITOR='nvim'
-export NOTE_NAME_AS_TITLE=1
-export NOTES_DIR="$HOME/Dropbox/zettl"
-
-# Use neovim as default editor
-export EDITOR="nvim"
-export VISUAL="nvim"
-
-# Add /usr/local/bin to the beginning of the PATH environment variable.
-# This ensures that executables in /usr/local/bin are found before other directories in the PATH.
-export PATH="/usr/local/bin:$PATH"
-
-# Set LDFLAGS environment variable for the linker to use the specified directories for library files.
-# This is useful when building software that depends on non-standard library locations, like zlib and bzip2 in this case.
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-
-# Set CPPFLAGS environment variable for the C/C++ preprocessor to use the specified directories for header files.
-# This is useful when building software that depends on non-standard header locations, like zlib and bzip2 in this case.
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-
-# Hide computer name in terminal
-export DEFAULT_USER="$(whoami)"
+# Starship
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init zsh)"
+starship config palette $STARSHIP_THEME
 
 # Load Git completion
 zstyle ':completion:*:*:git:*' script $HOME/.config/zsh/git-completion.bash
 fpath=($HOME/.config/zsh $fpath)
 autoload -Uz compinit && compinit
+
+# Redshift
+export ODBCINI="$HOME/.odbc.ini"
+export ODBCSYSINI="/opt/amazon/redshift/Setup"
+export AMAZONREDSHIFTODBCINI="/opt/amazon/redshift/lib/amazon.redshiftodbc.ini"
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/lib"
 
 # fzf
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
@@ -81,14 +60,8 @@ if which tmux 2>&1 >/dev/null; then
   fi
 fi
 
-# Redshift
-export ODBCINI="$HOME/.odbc.ini"
-export ODBCSYSINI="/opt/amazon/redshift/Setup"
-export AMAZONREDSHIFTODBCINI="/opt/amazon/redshift/lib/amazon.redshiftodbc.ini"
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/lib"
-
 # Activate syntax highlighting
-# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
