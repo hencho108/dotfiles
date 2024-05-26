@@ -15,7 +15,7 @@ install_custom() { # Function to install custom formulas and casks
 
     if $is_cask && [ -f "$CASKS_DIR/$package_name.rb" ]; then
         info "Installing custom cask: $package_name"
-        brew install --cask "$CASKS_DIR/$package_name.rb"
+        brew install --force --cask "$CASKS_DIR/$package_name.rb"
     elif ! $is_cask && [ -f "$FORMULAE_DIR/$package_name.rb" ]; then
         info "Installing custom formula: $package_name"
         brew install "$FORMULAE_DIR/$package_name.rb"
@@ -83,5 +83,10 @@ if [ "$(basename "$0")" = "$(basename "${BASH_SOURCE[0]}")" ]; then
     fi
     install_custom_formulae
     install_custom_casks
-    run_brew_bundle
+
+    read -p "Install Brew bundle? [y/n] " install_bundle
+
+    if [[ "$install_bundle" == "y" ]]; then
+        run_brew_bundle
+    fi
 fi
