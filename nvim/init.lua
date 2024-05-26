@@ -1,5 +1,5 @@
-require 'core.options' -- Load general options
-require 'core.keymaps' -- Load general keymaps
+require 'core.options'  -- Load general options
+require 'core.keymaps'  -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 
 -- Install package manager
@@ -17,13 +17,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Import color theme based on environment variable NVIM_THEME
-local default_color_scheme = 'onedark'
+local default_color_scheme = 'nord'
 local env_var_nvim_theme = os.getenv 'NVIM_THEME' or default_color_scheme
 
 -- Define a table of theme modules
 local themes = {
-  onedark = 'plugins.themes.onedark',
   nord = 'plugins.themes.nord',
+  onedark = 'plugins.themes.onedark',
 }
 
 -- Setup plugins
