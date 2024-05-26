@@ -43,6 +43,8 @@ brew "openssl@3", link: false
 brew "postgresql@14"
 # Command-line interface for SQLite
 brew "sqlite"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Application uninstaller
 cask "appcleaner"
 # Web browser focusing on privacy
