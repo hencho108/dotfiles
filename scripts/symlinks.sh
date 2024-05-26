@@ -1,8 +1,18 @@
 #!/bin/bash
 
-config_file="scripts/symlinks_config.conf"
+# Get the absolute path of the directory where the script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-. scripts/utils.sh
+CONFIG_FILE="$SCRIPT_DIR/../symlinks_config.conf"
+
+. $SCRIPT_DIR/utils.sh
+
+
+# Check if configuration file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Configuration file not found: $CONFIG_FILE"
+    exit 1
+fi
 
 create_symlinks() {
     info "Creating symbolic links..."
@@ -44,7 +54,7 @@ create_symlinks() {
             ln -s "$source" "$target"
             success "Created symbolic link: $target"
         fi
-    done <"$config_file"
+    done <"$CONFIG_FILE"
 }
 
 delete_symlinks() {
@@ -68,7 +78,7 @@ delete_symlinks() {
         else
             warning "Not found: $target"
         fi
-    done <"$config_file"
+    done <"$CONFIG_FILE"
 }
 
 # Parse arguments

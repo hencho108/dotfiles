@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
+tap "homebrew/cask"
+tap "homebrew/core"
 # Library for command-line editing
 brew "readline"
 # Official Amazon AWS command-line interface
@@ -12,8 +13,6 @@ brew "fzf"
 brew "gcc"
 # Fast, highly customisable system info script
 brew "neofetch"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
 # Platform built on V8 to build network applications
 brew "node"
 # Python version management
@@ -38,6 +37,12 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3", link: false
+# Object-relational database system
+brew "postgresql@14"
+# Command-line interface for SQLite
+brew "sqlite"
 # Application uninstaller
 cask "appcleaner"
 # Web browser focusing on privacy
@@ -58,10 +63,10 @@ cask "grammarly-desktop"
 cask "iterm2"
 # GPU-based terminal emulator
 cask "kitty"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Move and resize windows using keyboard shortcuts or snap areas
-cask "rectangle"
 # Music streaming service
 cask "spotify"
 # Keyboard customizer
@@ -70,6 +75,10 @@ cask "karabiner-elements"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# App that enables mouse-free UI interaction
+cask "shortcat"
+# Software for Logitech devices
+cask "logi-options-plus"
 vscode "eamodio.gitlens"
 vscode "esbenp.prettier-vscode"
 vscode "mechatroner.rainbow-csv"

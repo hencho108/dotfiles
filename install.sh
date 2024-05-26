@@ -2,8 +2,8 @@
 
 . scripts/utils.sh
 . scripts/prerequisites.sh
+. scripts/brew-install-custom.sh
 . scripts/osx-defaults.sh
-. scripts/mac-apps.sh
 . scripts/symlinks.sh
 
 info "Dotfiles intallation initialized..."
@@ -24,7 +24,9 @@ if [[ "$install_apps" == "y" ]]; then
     info "Apps"
     info "===================="
 
-    install_brewfile_apps
+    install_custom_formulae
+    install_custom_casks
+    run_brew_bundle
 fi
 
 printf "\n"

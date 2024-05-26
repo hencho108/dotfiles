@@ -1,6 +1,9 @@
 #!/bin/bash
 
-. scripts/utils.sh
+# Get the absolute path of the directory where the script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+. $SCRIPT_DIR/utils.sh
 
 register_keyboard_shortcuts() {
     # Register CTRL+/ keyboard shortcut to avoid system beep when pressed
