@@ -6,35 +6,31 @@ These dotfiles help me maintain a consistent setup across different machines and
 
 ![screenshot](img/nvim-demo.png)
 
+## Essential Tools
+
+- **Editor**: [NeoVim](https://neovim.io/). As a fallback, I have a basic standard [Vim](https://www.vim.org/) config that provides 80% of the functionality of my NeoVim setup without any dependencies for maximum portability and stability.
+- **Multiplexer**: [Tmux](https://github.com/tmux/tmux/wiki)
+- **Main Terminal**: [WezTerm](https://wezfurlong.org/wezterm/index.html)
+- **Shell Prompt**: [Starship](https://starship.rs/)
+- **Color Theme**: All themes are based on the [Nord color palette](https://www.nordtheme.com/docs/colors-and-palettes). Themes can be easily switched via environment variables set in `.zshenv`.
+- **Window Management**: [Rectangle](https://github.com/rxhanson/Rectangle) for resizing windows, paired with [Karabiner-Elements](https://karabiner-elements.pqrs.org/) for switching between applications.
+- **File Manager**: [Ranger](https://github.com/ranger/ranger)
+
 ## Setup
 
-To set up these dotfiles on your system, follow these simple steps:
-
-1. Make sure the install script is executable:
-
-```bash
-chmod +x ./install.sh
-```
-
-2. Run the script:
+To set up these dotfiles on your system, run:
 
 ```bash
 ./install.sh
 ```
 
-3. Follow the on screen prompts.
+Then follow the on-screen prompts.
 
 ## Uninstalling
 
 If you ever want to remove the symlinks created by the installation script, you can use the provided symlinks removal script:
 
-1. Before running the symlinks removal script, make sure it is executable.
-
-```bash
-chmod +x ./scripts/symlinks.sh
-```
-
-2. To delete all symlinks created by the installation script, run:
+To delete all symlinks created by the installation script, run:
 
 ```bash
 ./scripts/symlinks.sh --delete
@@ -49,19 +45,9 @@ This will remove the symlinks but will not delete the actual configuration files
 When adding new dotfiles to this repository, follow these steps:
 
 1. Place your dotfile in the appropriate location within the repository.
-2. Update the `scripts/symlinks_config.conf` file to include the symlink creation for your new dotfile.
+2. Update the `symlinks_config.conf` file to include the symlink creation for your new dotfile.
 3. If necessary, update the `install.sh` script to set up the software.
 
 ### Software Installation
 
-If you install new software, especially using Homebrew, here's a useful tip:
-
-You can easily manage the software you've installed via Homebrew by using a `Brewfile`. To generate a `Brewfile` with a list of all installed software and their descriptions, run the following command:
-
-```bash
-brew bundle dump --describe
-```
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+Software is installed using Homebrew. To add a formula or cask, update the `homebrew/Brewfile` and run `./scripts/brew_install_custom.sh`. If you need to install a specific version of a package, find its Ruby script in the commit history of an official Homebrew GitHub repository and place it in the `homebrew/custom-casks/` or `homebrew/custom-formulae/` directory, depending on whether it's a cask or formula.
