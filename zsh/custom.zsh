@@ -62,6 +62,9 @@ fi
 
 # Activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# export ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue
+# export ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue
+# export ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

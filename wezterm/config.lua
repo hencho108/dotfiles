@@ -26,7 +26,7 @@ config = {
 	background = {
 		{
 			source = {
-				File = "/Users/hendrik/code/dotfiles/kitty/bg-monterey.png",
+				File = "/Users/hendrik/code/dotfiles/img/bg-monterey.png",
 			},
 			hsb = {
 				hue = 1.0,
