@@ -1,4 +1,4 @@
-. $HOME/.cargo/env
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # Secrets
 [ -f "$HOME/.env" ] && source "$HOME/.env"
