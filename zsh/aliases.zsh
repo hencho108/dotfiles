@@ -37,6 +37,7 @@ alias ggpush='git push origin $(current_branch)'
 alias gc='git commit -v'
 alias gcm='git commit -m'
 alias gcmnv='git commit --no-verify -m'
+alias gcanenv='git commit --amend --no-edit --no-verify'
 # Function to commit with ticket ID from current branch, with optional push
 quick_commit() {
   local branch_name ticket_id commit_message push_flag
