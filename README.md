@@ -16,7 +16,7 @@ This repository contains my dotfiles, which are the config files and scripts I u
 
 ## Custom Window Management
 
-I'm not a fan of the default window management solutions that macOS provides, like repeatedly pressing Cmd+Tab to switch apps or using the mouse to click and drag. To streamline my workflow, I created a custom window management solution using [Karabiner-Elements](https://karabiner-elements.pqrs.org/) and [Rectangle](https://rectangleapp.com/). By using these tools together, I can efficiently manage my windows and app with minimal mental overhead and maximum speed, using only my keyboard. Here's how it works:
+I'm not a fan of the default window management solutions that macOS provides, like repeatedly pressing Cmd+Tab to switch apps or using the mouse to click and drag. To streamline my workflow, I created a custom window management solution using [Karabiner-Elements](https://karabiner-elements.pqrs.org/) and [Rectangle](https://rectangleapp.com/). By using these tools together, I can efficiently manage my windows and switch apps with minimal mental overhead and maximum speed, using only my keyboard. Here's how it works:
 
 ### Tab Key as Hyperkey
 
@@ -26,13 +26,19 @@ The `Tab` key acts as a regular `Tab` when tapped, but when held, it provides ad
 
 Holding `Tab + W` enables a window management layer, where other keys become shortcuts to resize the current window using Rectangle.
 
-**Examples:** - `Tab + W + H`: Resize window to the left half. - `Tab + W + L`: Resize window to the right half.
+**Examples:**
+
+- `Tab + W + [`: Resize window to the left half
+- `Tab + W + ]`: Resize window to the right half
 
 ### Access Exposé Layer
 
 Holding `Tab + E` enables an exposé layer, where other keys become shortcuts to open specific apps.
 
-**Examples:** - `Tab + E + J`: Open browser. - `Tab + E + K`: Open terminal.
+**Examples:**
+
+- `Tab + E + J`: Open browser
+- `Tab + E + K`: Open terminal
 
 ## Setup
 
