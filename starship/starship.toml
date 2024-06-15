@@ -19,6 +19,7 @@ black="#2c323c"
 
 [palettes.nord]
 directory_fg = "#5E81AC"
+# directory_fg = "#81A1C1"
 branch_fg = "#A3BE8C"
 secondary_elems_fg = "#616E88"
 blue = "#5E81AC"
