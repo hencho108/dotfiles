@@ -1,8 +1,6 @@
-# My dotfiles
+# Dotfiles
 
-This repository contains my dotfiles, which are the configuration files and scripts I use to customize my development environment.
-
-These dotfiles help me maintain a consistent setup across different machines and save time when setting up new environments.
+This repository contains my dotfiles, which are the config files and scripts I use to customize my development environment. These files help me maintain a consistent setup across different machines and save time when setting up new environments.
 
 ![screenshot](img/nvim-demo.png)
 
@@ -15,6 +13,26 @@ These dotfiles help me maintain a consistent setup across different machines and
 - **Color Theme**: All themes are based on the [Nord color palette](https://www.nordtheme.com/docs/colors-and-palettes). Themes can be easily switched via environment variables set in `.zshenv`.
 - **Window Management**: [Rectangle](https://github.com/rxhanson/Rectangle) for resizing windows, paired with [Karabiner-Elements](https://karabiner-elements.pqrs.org/) for switching between applications.
 - **File Manager**: [Ranger](https://github.com/ranger/ranger)
+
+## Custom Window Management
+
+I'm not a fan of the default window management solutions that macOS provides, like repeatedly pressing Cmd+Tab to switch apps or using the mouse to click and drag. To streamline my workflow, I created a custom window management solution using [Karabiner-Elements](https://karabiner-elements.pqrs.org/) and [Rectangle](https://rectangleapp.com/). By using these tools together, I can efficiently manage my windows and app with minimal mental overhead and maximum speed, using only my keyboard. Here's how it works:
+
+### Tab Key as Hyperkey
+
+The `Tab` key acts as a regular `Tab` when tapped, but when held, it provides additional functionalities.
+
+### Access Window Layer
+
+Holding `Tab + W` enables a window management layer, where other keys become shortcuts to resize the current window using Rectangle.
+
+**Examples:** - `Tab + W + H`: Resize window to the left half. - `Tab + W + L`: Resize window to the right half.
+
+### Access Exposé Layer
+
+Holding `Tab + E` enables an exposé layer, where other keys become shortcuts to open specific apps.
+
+**Examples:** - `Tab + E + J`: Open browser. - `Tab + E + K`: Open terminal.
 
 ## Setup
 
